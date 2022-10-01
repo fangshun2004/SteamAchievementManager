@@ -65,17 +65,17 @@ namespace SAM.Game
 
             this._StatisticsDataGridView.AutoGenerateColumns = false;
 
-            this._StatisticsDataGridView.Columns.Add("name", "Name");
+            this._StatisticsDataGridView.Columns.Add("name", "名称");
             this._StatisticsDataGridView.Columns[0].ReadOnly = true;
             this._StatisticsDataGridView.Columns[0].Width = 200;
             this._StatisticsDataGridView.Columns[0].DataPropertyName = "DisplayName";
 
-            this._StatisticsDataGridView.Columns.Add("value", "Value");
+            this._StatisticsDataGridView.Columns.Add("value", "数值");
             this._StatisticsDataGridView.Columns[1].ReadOnly = this._EnableStatsEditingCheckBox.Checked == false;
             this._StatisticsDataGridView.Columns[1].Width = 90;
             this._StatisticsDataGridView.Columns[1].DataPropertyName = "Value";
 
-            this._StatisticsDataGridView.Columns.Add("extra", "Extra");
+            this._StatisticsDataGridView.Columns.Add("extra", "扩展");
             this._StatisticsDataGridView.Columns[2].ReadOnly = true;
             this._StatisticsDataGridView.Columns[2].Width = 200;
             this._StatisticsDataGridView.Columns[2].DataPropertyName = "Extra";
