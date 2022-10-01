@@ -161,7 +161,7 @@ namespace SAM.Picker
             this._GameListView.VirtualListSize = this._FilteredGames.Count;
             this._PickerStatusLabel.Text = string.Format(
                 CultureInfo.CurrentCulture,
-                "Displaying {0} games. Total {1} games.",
+                "显示 {0} 个游戏。 一共 {1} 个游戏。",
                 this._GameListView.Items.Count,
                 this._Games.Count);
 
@@ -293,7 +293,7 @@ namespace SAM.Picker
 
             this._DownloadStatusLabel.Text = string.Format(
                 CultureInfo.CurrentCulture,
-                "Downloading {0} game icons...",
+                "下载 {0} 个游戏图标中...",
                 this._LogoQueue.Count);
             this._DownloadStatusLabel.Visible = true;
 
@@ -392,7 +392,7 @@ namespace SAM.Picker
             {
                 MessageBox.Show(
                     this,
-                    "Failed to start SAM.Game.exe.",
+                    "无法启动 SAM.Game.exe.",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -413,7 +413,7 @@ namespace SAM.Picker
             {
                 MessageBox.Show(
                     this,
-                    "Please enter a valid game ID.",
+                    "请输入有效的游戏 ID。",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -422,7 +422,7 @@ namespace SAM.Picker
 
             if (this.OwnsGame(id) == false)
             {
-                MessageBox.Show(this, "You don't own that game.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "您不拥有这个游戏。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

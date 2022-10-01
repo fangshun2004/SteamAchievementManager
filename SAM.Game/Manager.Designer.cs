@@ -88,8 +88,8 @@
             this._StoreButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._StoreButton.Name = "_StoreButton";
             this._StoreButton.Size = new System.Drawing.Size(120, 22);
-            this._StoreButton.Text = "Commit Changes";
-            this._StoreButton.ToolTipText = "Store achievements and statistics for active game.";
+            this._StoreButton.Text = "提交更改";
+            this._StoreButton.ToolTipText = "存储运行中游戏的成就和统计数据。";
             this._StoreButton.Click += new System.EventHandler(this.OnStore);
             // 
             // _ReloadButton
@@ -99,8 +99,8 @@
             this._ReloadButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._ReloadButton.Name = "_ReloadButton";
             this._ReloadButton.Size = new System.Drawing.Size(66, 22);
-            this._ReloadButton.Text = "Refresh";
-            this._ReloadButton.ToolTipText = "Refresh achievements and statistics for active game.";
+            this._ReloadButton.Text = "刷新";
+            this._ReloadButton.ToolTipText = "刷新运行游戏的成就/统计数据。";
             this._ReloadButton.Click += new System.EventHandler(this.OnRefresh);
             // 
             // _ResetButton
@@ -109,8 +109,8 @@
             this._ResetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._ResetButton.Name = "_ResetButton";
             this._ResetButton.Size = new System.Drawing.Size(55, 22);
-            this._ResetButton.Text = "Reset";
-            this._ResetButton.ToolTipText = "Reset achievements and/or statistics for active game.";
+            this._ResetButton.Text = "重置";
+            this._ResetButton.ToolTipText = "重置运行游戏的成就和/统计数据。";
             this._ResetButton.Click += new System.EventHandler(this.OnResetAllStats);
             // 
             // _AchievementImageList
@@ -148,7 +148,7 @@
             this._DownloadStatusLabel.Image = global::SAM.Game.Resources.Download;
             this._DownloadStatusLabel.Name = "_DownloadStatusLabel";
             this._DownloadStatusLabel.Size = new System.Drawing.Size(111, 17);
-            this._DownloadStatusLabel.Text = "Download status";
+            this._DownloadStatusLabel.Text = "下载统计数据";
             this._DownloadStatusLabel.Visible = false;
             // 
             // _CallbackTimer
@@ -178,7 +178,7 @@
             this._AchievementsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this._AchievementsTabPage.Size = new System.Drawing.Size(608, 308);
             this._AchievementsTabPage.TabIndex = 0;
-            this._AchievementsTabPage.Text = "Achievements";
+            this._AchievementsTabPage.Text = "成就";
             this._AchievementsTabPage.UseVisualStyleBackColor = true;
             // 
             // _AchievementListView
@@ -208,12 +208,12 @@
             // 
             // _AchievementNameColumnHeader
             // 
-            this._AchievementNameColumnHeader.Text = "Name";
+            this._AchievementNameColumnHeader.Text = "名称";
             this._AchievementNameColumnHeader.Width = 200;
             // 
             // _AchievementDescriptionColumnHeader
             // 
-            this._AchievementDescriptionColumnHeader.Text = "Description";
+            this._AchievementDescriptionColumnHeader.Text = "描述";
             this._AchievementDescriptionColumnHeader.Width = 380;
             // 
             // _AchievementsToolStrip
@@ -234,8 +234,8 @@
             this._LockAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._LockAllButton.Name = "_LockAllButton";
             this._LockAllButton.Size = new System.Drawing.Size(23, 22);
-            this._LockAllButton.Text = "Lock All";
-            this._LockAllButton.ToolTipText = "Lock all achievements.";
+            this._LockAllButton.Text = "锁定全部";
+            this._LockAllButton.ToolTipText = "锁定全部的成就。";
             this._LockAllButton.Click += new System.EventHandler(this.OnLockAll);
             // 
             // _InvertAllButton
@@ -245,8 +245,8 @@
             this._InvertAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._InvertAllButton.Name = "_InvertAllButton";
             this._InvertAllButton.Size = new System.Drawing.Size(23, 22);
-            this._InvertAllButton.Text = "Invert All";
-            this._InvertAllButton.ToolTipText = "Invert all achievements.";
+            this._InvertAllButton.Text = "反选全部";
+            this._InvertAllButton.ToolTipText = "反选全部的成就。";
             this._InvertAllButton.Click += new System.EventHandler(this.OnInvertAll);
             // 
             // _UnlockAllButton
@@ -256,8 +256,8 @@
             this._UnlockAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._UnlockAllButton.Name = "_UnlockAllButton";
             this._UnlockAllButton.Size = new System.Drawing.Size(23, 22);
-            this._UnlockAllButton.Text = "Unlock All";
-            this._UnlockAllButton.ToolTipText = "Unlock all achievements.";
+            this._UnlockAllButton.Text = "解锁全部";
+            this._UnlockAllButton.ToolTipText = "解锁全部的成就。";
             this._UnlockAllButton.Click += new System.EventHandler(this.OnUnlockAll);
             // 
             // _StatisticsTabPage
@@ -269,7 +269,7 @@
             this._StatisticsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this._StatisticsTabPage.Size = new System.Drawing.Size(608, 308);
             this._StatisticsTabPage.TabIndex = 1;
-            this._StatisticsTabPage.Text = "Statistics";
+            this._StatisticsTabPage.Text = "统计数据";
             this._StatisticsTabPage.UseVisualStyleBackColor = true;
             // 
             // _EnableStatsEditingCheckBox
@@ -281,8 +281,7 @@
             this._EnableStatsEditingCheckBox.Name = "_EnableStatsEditingCheckBox";
             this._EnableStatsEditingCheckBox.Size = new System.Drawing.Size(512, 17);
             this._EnableStatsEditingCheckBox.TabIndex = 1;
-            this._EnableStatsEditingCheckBox.Text = "I understand by modifying the values of stats, I may screw things up and can\'t bl" +
-    "ame anyone but myself.";
+            this._EnableStatsEditingCheckBox.Text = "我明白，通过修改统计数据的值，可能会把数据据搞乱，"+"除了我自己，我不能责怪任何人。";
             this._EnableStatsEditingCheckBox.UseVisualStyleBackColor = true;
             this._EnableStatsEditingCheckBox.CheckedChanged += new System.EventHandler(this.OnStatAgreementChecked);
             // 
@@ -356,4 +355,3 @@
         private System.Windows.Forms.ToolStripStatusLabel _DownloadStatusLabel;
 	}
 }
-

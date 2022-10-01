@@ -163,7 +163,7 @@ namespace SAM.Game
 
             this._DownloadStatusLabel.Text = string.Format(
                 CultureInfo.CurrentCulture,
-                "Downloading {0} icons...",
+                "下载 {0} 图标中...",
                 this._IconQueue.Count);
             this._DownloadStatusLabel.Visible = true;
 
@@ -185,9 +185,9 @@ namespace SAM.Game
             switch (id)
             {
                 case 2:
-                {
-                    return "generic error -- this usually means you don't own the game";
-                }
+                    {
+                        return "一般错误 - 这通常意味着您不拥有游戏";
+                    }
             }
 
             return id.ToString(CultureInfo.InvariantCulture);
@@ -277,90 +277,90 @@ namespace SAM.Game
                 switch (type)
                 {
                     case APITypes.UserStatType.Invalid:
-                    {
-                        break;
-                    }
+                        {
+                            break;
+                        }
 
                     case APITypes.UserStatType.Integer:
-                    {
-                        var id = stat["name"].AsString("");
-                        string name = GetLocalizedString(stat["display"]["name"], currentLanguage, id);
-
-                        this._StatDefinitions.Add(new Stats.IntegerStatDefinition()
                         {
-                            Id = stat["name"].AsString(""),
-                            DisplayName = name,
-                            MinValue = stat["min"].AsInteger(int.MinValue),
-                            MaxValue = stat["max"].AsInteger(int.MaxValue),
-                            MaxChange = stat["maxchange"].AsInteger(0),
-                            IncrementOnly = stat["incrementonly"].AsBoolean(false),
-                            DefaultValue = stat["default"].AsInteger(0),
-                            Permission = stat["permission"].AsInteger(0),
-                        });
-                        break;
-                    }
+                            var id = stat["name"].AsString("");
+                            string name = GetLocalizedString(stat["display"]["name"], currentLanguage, id);
+
+                            this._StatDefinitions.Add(new Stats.IntegerStatDefinition()
+                            {
+                                Id = stat["name"].AsString(""),
+                                DisplayName = name,
+                                MinValue = stat["min"].AsInteger(int.MinValue),
+                                MaxValue = stat["max"].AsInteger(int.MaxValue),
+                                MaxChange = stat["maxchange"].AsInteger(0),
+                                IncrementOnly = stat["incrementonly"].AsBoolean(false),
+                                DefaultValue = stat["default"].AsInteger(0),
+                                Permission = stat["permission"].AsInteger(0),
+                            });
+                            break;
+                        }
 
                     case APITypes.UserStatType.Float:
                     case APITypes.UserStatType.AverageRate:
-                    {
-                        var id = stat["name"].AsString("");
-                        string name = GetLocalizedString(stat["display"]["name"], currentLanguage, id);
-
-                        this._StatDefinitions.Add(new Stats.FloatStatDefinition()
                         {
-                            Id = stat["name"].AsString(""),
-                            DisplayName = name,
-                            MinValue = stat["min"].AsFloat(float.MinValue),
-                            MaxValue = stat["max"].AsFloat(float.MaxValue),
-                            MaxChange = stat["maxchange"].AsFloat(0.0f),
-                            IncrementOnly = stat["incrementonly"].AsBoolean(false),
-                            DefaultValue = stat["default"].AsFloat(0.0f),
-                            Permission = stat["permission"].AsInteger(0),
-                        });
-                        break;
-                    }
+                            var id = stat["name"].AsString("");
+                            string name = GetLocalizedString(stat["display"]["name"], currentLanguage, id);
+
+                            this._StatDefinitions.Add(new Stats.FloatStatDefinition()
+                            {
+                                Id = stat["name"].AsString(""),
+                                DisplayName = name,
+                                MinValue = stat["min"].AsFloat(float.MinValue),
+                                MaxValue = stat["max"].AsFloat(float.MaxValue),
+                                MaxChange = stat["maxchange"].AsFloat(0.0f),
+                                IncrementOnly = stat["incrementonly"].AsBoolean(false),
+                                DefaultValue = stat["default"].AsFloat(0.0f),
+                                Permission = stat["permission"].AsInteger(0),
+                            });
+                            break;
+                        }
 
                     case APITypes.UserStatType.Achievements:
                     case APITypes.UserStatType.GroupAchievements:
-                    {
-                        if (stat.Children != null)
                         {
-                            foreach (var bits in stat.Children.Where(
-                                b => string.Compare(b.Name, "bits", StringComparison.InvariantCultureIgnoreCase) == 0))
+                            if (stat.Children != null)
                             {
-                                if (bits.Valid == false ||
-                                    bits.Children == null)
+                                foreach (var bits in stat.Children.Where(
+                                    b => string.Compare(b.Name, "bits", StringComparison.InvariantCultureIgnoreCase) == 0))
                                 {
-                                    continue;
-                                }
-
-                                foreach (var bit in bits.Children)
-                                {
-                                    string id = bit["name"].AsString("");
-                                    string name = GetLocalizedString(bit["display"]["name"], currentLanguage, id);
-                                    string desc = GetLocalizedString(bit["display"]["desc"], currentLanguage, "");
-
-                                    this._AchievementDefinitions.Add(new Stats.AchievementDefinition()
+                                    if (bits.Valid == false ||
+                                        bits.Children == null)
                                     {
-                                        Id = id,
-                                        Name = name,
-                                        Description = desc,
-                                        IconNormal = bit["display"]["icon"].AsString(""),
-                                        IconLocked = bit["display"]["icon_gray"].AsString(""),
-                                        IsHidden = bit["display"]["hidden"].AsBoolean(false),
-                                        Permission = bit["permission"].AsInteger(0),
-                                    });
+                                        continue;
+                                    }
+
+                                    foreach (var bit in bits.Children)
+                                    {
+                                        string id = bit["name"].AsString("");
+                                        string name = GetLocalizedString(bit["display"]["name"], currentLanguage, id);
+                                        string desc = GetLocalizedString(bit["display"]["desc"], currentLanguage, "");
+
+                                        this._AchievementDefinitions.Add(new Stats.AchievementDefinition()
+                                        {
+                                            Id = id,
+                                            Name = name,
+                                            Description = desc,
+                                            IconNormal = bit["display"]["icon"].AsString(""),
+                                            IconLocked = bit["display"]["icon_gray"].AsString(""),
+                                            IsHidden = bit["display"]["hidden"].AsBoolean(false),
+                                            Permission = bit["permission"].AsInteger(0),
+                                        });
+                                    }
                                 }
                             }
+
+                            break;
                         }
 
-                        break;
-                    }
-
                     default:
-                    {
-                        throw new InvalidOperationException("invalid stat type");
-                    }
+                        {
+                            throw new InvalidOperationException("无效的统计信息类型");
+                        }
                 }
             }
 
@@ -373,7 +373,7 @@ namespace SAM.Game
             {
                 this._GameStatusLabel.Text = string.Format(
                     CultureInfo.CurrentCulture,
-                    "Error while retrieving stats: {0}",
+                    "检索统计信息时出错: {0}",
                     TranslateError(param.Result));
                 this.EnableInput();
                 return;
@@ -381,7 +381,7 @@ namespace SAM.Game
 
             if (this.LoadUserGameStatsSchema() == false)
             {
-                this._GameStatusLabel.Text = "Failed to load schema.";
+                this._GameStatusLabel.Text = "无法加载架构。";
                 this.EnableInput();
                 return;
             }
@@ -393,10 +393,10 @@ namespace SAM.Game
             }
             catch (Exception e)
             {
-                this._GameStatusLabel.Text = "Error when handling stats retrieval.";
+                this._GameStatusLabel.Text = "处理统计信息检索时出错。";
                 this.EnableInput();
                 MessageBox.Show(
-                    "Error when handling stats retrieval:\n" + e,
+                    "处理统计信息检索时出错:\n" + e,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -405,7 +405,7 @@ namespace SAM.Game
 
             this._GameStatusLabel.Text = string.Format(
                 CultureInfo.CurrentCulture,
-                "Retrieved {0} achievements and {1} statistics.",
+                "检索{0}成就和{1}统计数据.",
                 this._AchievementListView.Items.Count,
                 this._StatisticsDataGridView.Rows.Count);
             this.EnableInput();
@@ -422,7 +422,7 @@ namespace SAM.Game
                 return;
             }
 
-            this._GameStatusLabel.Text = "Retrieving stat information...";
+            this._GameStatusLabel.Text = "检索统计信息中...";
             this.DisableInput();
         }
 
@@ -592,7 +592,7 @@ namespace SAM.Game
                         this,
                         string.Format(
                             CultureInfo.CurrentCulture,
-                            "An error occurred while setting the state for {0}, aborting store.",
+                            "设置{0}、中止存储的状态时出错。",
                             info.Id),
                         "Error",
                         MessageBoxButtons.OK,
@@ -630,7 +630,7 @@ namespace SAM.Game
                             this,
                             string.Format(
                                 CultureInfo.CurrentCulture,
-                                "An error occurred while setting the value for {0}, aborting store.",
+                                "设置{0}、中止存储的状态时出错。",
                                 stat.Id),
                             "Error",
                             MessageBoxButtons.OK,
@@ -649,7 +649,7 @@ namespace SAM.Game
                             this,
                             string.Format(
                                 CultureInfo.CurrentCulture,
-                                "An error occurred while setting the value for {0}, aborting store.",
+                                "设置{0}、中止存储的值时出错。",
                                 stat.Id),
                             "Error",
                             MessageBoxButtons.OK,
@@ -659,7 +659,7 @@ namespace SAM.Game
                 }
                 else
                 {
-                    throw new InvalidOperationException("unsupported stat type");
+                    throw new InvalidOperationException("不支持的统计信息类型");
                 }
             }
 
@@ -720,7 +720,7 @@ namespace SAM.Game
             {
                 MessageBox.Show(
                     this,
-                    "An error occurred while storing, aborting.",
+                    "存储、中止时出错。",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -756,7 +756,7 @@ namespace SAM.Game
                 this,
                 string.Format(
                     CultureInfo.CurrentCulture,
-                    "Stored {0} achievements and {1} statistics.",
+                    "存储{0}成就和{1}统计信息。",
                     achievements,
                     stats),
                 "Information",
@@ -774,13 +774,13 @@ namespace SAM.Game
                 {
                     e.ThrowException = false;
                     e.Cancel = true;
-                    view.Rows[e.RowIndex].ErrorText = "Stat is protected! -- you can't modify it";
+                    view.Rows[e.RowIndex].ErrorText = "统计数据受到保护！- 你不能修改它";
                 }
                 else
                 {
                     e.ThrowException = false;
                     e.Cancel = true;
-                    view.Rows[e.RowIndex].ErrorText = "Invalid value";
+                    view.Rows[e.RowIndex].ErrorText = "无效值";
                 }
             }
         }
@@ -799,7 +799,7 @@ namespace SAM.Game
         private void OnResetAllStats(object sender, EventArgs e)
         {
             if (MessageBox.Show(
-                "Are you absolutely sure you want to reset stats?",
+                "您确定要重置统计信息吗?",
                 "Warning",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning) == DialogResult.No)
@@ -808,13 +808,13 @@ namespace SAM.Game
             }
 
             bool achievementsToo = DialogResult.Yes == MessageBox.Show(
-                "Do you want to reset achievements too?",
+                "是否也要重置成就?",
                 "Question",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (MessageBox.Show(
-                "Really really sure?",
+                "真的非常确定?",
                 "Warning",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Error) == DialogResult.No)
@@ -854,7 +854,7 @@ namespace SAM.Game
             {
                 MessageBox.Show(
                     this,
-                    "Sorry, but this is a protected achievement and cannot be managed with Steam Achievement Manager.",
+                    "很抱歉，这是一项受保护的成就，无法使用 Steam 成就管理器进行管理。",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

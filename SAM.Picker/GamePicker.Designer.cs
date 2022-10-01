@@ -1,33 +1,33 @@
 ﻿namespace SAM.Picker
 {
-	partial class GamePicker
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class GamePicker
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ToolStripSeparator _ToolStripSeparator1;
             System.Windows.Forms.ToolStripSeparator _ToolStripSeparator2;
@@ -97,7 +97,7 @@
             this._RefreshGamesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._RefreshGamesButton.Name = "_RefreshGamesButton";
             this._RefreshGamesButton.Size = new System.Drawing.Size(105, 22);
-            this._RefreshGamesButton.Text = "Refresh Games";
+            this._RefreshGamesButton.Text = "刷新游戏";
             this._RefreshGamesButton.Click += new System.EventHandler(this.OnRefresh);
             // 
             // _AddGameTextBox
@@ -111,7 +111,7 @@
             this._AddGameButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._AddGameButton.Name = "_AddGameButton";
             this._AddGameButton.Size = new System.Drawing.Size(83, 22);
-            this._AddGameButton.Text = "Add Game";
+            this._AddGameButton.Text = "添加游戏";
             this._AddGameButton.Click += new System.EventHandler(this.OnAddGame);
             // 
             // _FilterDropDownButton
@@ -126,7 +126,7 @@
             this._FilterDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._FilterDropDownButton.Name = "_FilterDropDownButton";
             this._FilterDropDownButton.Size = new System.Drawing.Size(29, 22);
-            this._FilterDropDownButton.Text = "Game filtering";
+            this._FilterDropDownButton.Text = "游戏筛选";
             // 
             // _FilterGamesMenuItem
             // 
@@ -135,7 +135,7 @@
             this._FilterGamesMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this._FilterGamesMenuItem.Name = "_FilterGamesMenuItem";
             this._FilterGamesMenuItem.Size = new System.Drawing.Size(142, 22);
-            this._FilterGamesMenuItem.Text = "Show &games";
+            this._FilterGamesMenuItem.Text = "显示 &游戏";
             this._FilterGamesMenuItem.CheckedChanged += new System.EventHandler(this.OnFilterUpdate);
             // 
             // _FilterDemosMenuItem
@@ -143,7 +143,7 @@
             this._FilterDemosMenuItem.CheckOnClick = true;
             this._FilterDemosMenuItem.Name = "_FilterDemosMenuItem";
             this._FilterDemosMenuItem.Size = new System.Drawing.Size(142, 22);
-            this._FilterDemosMenuItem.Text = "Show &demos";
+            this._FilterDemosMenuItem.Text = "显示 &试玩";
             this._FilterDemosMenuItem.CheckedChanged += new System.EventHandler(this.OnFilterUpdate);
             // 
             // _FilterModsMenuItem
@@ -151,7 +151,7 @@
             this._FilterModsMenuItem.CheckOnClick = true;
             this._FilterModsMenuItem.Name = "_FilterModsMenuItem";
             this._FilterModsMenuItem.Size = new System.Drawing.Size(142, 22);
-            this._FilterModsMenuItem.Text = "Show &mods";
+            this._FilterModsMenuItem.Text = "显示 &模组";
             this._FilterModsMenuItem.CheckedChanged += new System.EventHandler(this.OnFilterUpdate);
             // 
             // _FilterJunkMenuItem
@@ -159,7 +159,7 @@
             this._FilterJunkMenuItem.CheckOnClick = true;
             this._FilterJunkMenuItem.Name = "_FilterJunkMenuItem";
             this._FilterJunkMenuItem.Size = new System.Drawing.Size(142, 22);
-            this._FilterJunkMenuItem.Text = "Show &junk";
+            this._FilterJunkMenuItem.Text = "显示 &垃圾";
             this._FilterJunkMenuItem.CheckedChanged += new System.EventHandler(this.OnFilterUpdate);
             // 
             // _GameListView
@@ -206,7 +206,7 @@
             this._DownloadStatusLabel.Image = global::SAM.Picker.Resources.Download;
             this._DownloadStatusLabel.Name = "_DownloadStatusLabel";
             this._DownloadStatusLabel.Size = new System.Drawing.Size(111, 17);
-            this._DownloadStatusLabel.Text = "Download status";
+            this._DownloadStatusLabel.Text = "下载状态";
             this._DownloadStatusLabel.Visible = false;
             // 
             // _LogoWorker
@@ -239,16 +239,16 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private DoubleBufferedListView _GameListView;
-		private System.Windows.Forms.ImageList _LogoImageList;
-		private System.Windows.Forms.Timer _CallbackTimer;
-		private System.Windows.Forms.ToolStrip _PickerToolStrip;
-		private System.Windows.Forms.ToolStripButton _RefreshGamesButton;
-		private System.Windows.Forms.ToolStripTextBox _AddGameTextBox;
+        private DoubleBufferedListView _GameListView;
+        private System.Windows.Forms.ImageList _LogoImageList;
+        private System.Windows.Forms.Timer _CallbackTimer;
+        private System.Windows.Forms.ToolStrip _PickerToolStrip;
+        private System.Windows.Forms.ToolStripButton _RefreshGamesButton;
+        private System.Windows.Forms.ToolStripTextBox _AddGameTextBox;
         private System.Windows.Forms.ToolStripButton _AddGameButton;
         private System.Windows.Forms.ToolStripDropDownButton _FilterDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem _FilterGamesMenuItem;
@@ -260,6 +260,5 @@
         private System.Windows.Forms.ToolStripStatusLabel _PickerStatusLabel;
         private System.ComponentModel.BackgroundWorker _LogoWorker;
         private System.ComponentModel.BackgroundWorker _ListWorker;
-	}
+    }
 }
-
